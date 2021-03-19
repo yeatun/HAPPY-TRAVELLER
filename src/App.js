@@ -6,8 +6,16 @@ import {
   Link
 } from "react-router-dom";
 import Home from './Components/Home/Home';
-import Login from './Components/Login/Login';
+
 import { createContext, useState } from 'react';
+import Book from './Components/Book/Book';
+import Log from './Components/Log/Log';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import { Nav, Navbar } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import BookingPage from './Components/BookingPage/BookingPage';
+
+
 
 export const UserContext = createContext();
 function App() {
@@ -16,36 +24,57 @@ function App() {
     <div className="App">
      
       <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
-        <p>{loggedInUser.email}</p>
+      {/* <p>{loggedInUser.email}</p> */}
       <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
+      <nav className="navbar navbar-light bg-light justify-content-left nav">
+                <Link to="/" className="navbar-brand">HAPPY TRAVELLER</Link>
+                <Link to="/">Home</Link>
+                <Link to="/book/:id">Book</Link>
+                <Link to="/login">Login</Link>
+                <Link to="/contact"> Contact </Link>
+                <p>{loggedInUser.email}</p>
+            </nav>
+        
+     {/* <Link to="/">Home</Link>
+            
+          
+         
+          
+            <Link to="/book/:id">Book</Link>
+           
+           
+            <Link to="/login">Login</Link> */}
+            
+            
+        
+     
+      
 
+        
         <hr />
-
+       
         
         <Switch>
           <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-           
-          </Route>
-          <Route path="/Login">
+           <Home></Home></Route>
+          {/* <Route path="/login">
             <Login></Login>
-          </Route>
+          </Route> */}
+          
+            
+         
+          <PrivateRoute path="/book/:id">
+           <Book></Book>
+          </PrivateRoute>
+          <PrivateRoute path="/bookingPage">
+           <BookingPage></BookingPage>
+          </PrivateRoute>
           <Route path ="/home">
             <Home></Home>
+          </Route>
+          <Route path ="/login">
+          <Log></Log>
           </Route>
         </Switch>
       </div>

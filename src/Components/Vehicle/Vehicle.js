@@ -1,12 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Vehicles = (props) => {
-    const {image,name} =props.vehicle;
+ 
+  
+    const {id,image,name} =props.vehicle;
+
+   
     return (
-        <div>
-            <img style={{width:"200px"}} src={image} alt=""/>
+        <di className="col-sm-3 text-center border ">
+            <Link  to ={`/book/${id}`}>
+            <img style={{weight:"50px",height:"100px"}} src={image} alt=""/>
             <h1>{name}</h1>
-        </div>
+            </Link>
+        
+        </di>
     );
 };
 
