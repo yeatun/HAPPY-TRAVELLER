@@ -1,4 +1,4 @@
-# Happy TRAVEllER
+# HAPPY TRAVELLER
 
 This project was worked with react,
 made a fake data,worked with google,
