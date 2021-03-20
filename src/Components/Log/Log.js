@@ -4,7 +4,6 @@ import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import {UserContext} from '../../App';
 import { useHistory, useLocation } from 'react-router';
-// import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 const Log = () => {
     const [loggedInUser,setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
@@ -120,9 +119,7 @@ displayName:name,
     var errorCode = error.code;
     var errorMessage = error.message;
     
-    var email = error.email;
- 
-    var credential = error.credential;
+   console.log(errorCode,errorMessage);
     
   });
     }

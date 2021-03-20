@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div className ="HomeComponent ">
             
-            <div  className="row ">
+            <div className="row ">
             {
                 vehicles.map(vehicle => <Vehicle vehicle={vehicle} ></Vehicle>)
             }
