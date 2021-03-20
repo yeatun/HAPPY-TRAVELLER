@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import vehiclesData from '../../Data/data.json';
 import Vehicle from '../Vehicle/Vehicle';
 import "./Home.css";
+
 const Home = () => {
     const [vehicles , setVehicles] = useState([]);
     useEffect(()=>{
@@ -10,7 +11,7 @@ const Home = () => {
     return (
         <div className ="HomeComponent ">
             
-            <div className="row ">
+            <div  className="row ">
             {
                 vehicles.map(vehicle => <Vehicle vehicle={vehicle} ></Vehicle>)
             }

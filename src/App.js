@@ -13,7 +13,7 @@ import Log from './Components/Log/Log';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import { Nav, Navbar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import BookingPage from './Components/BookingPage/BookingPage';
+
 
 
 
@@ -27,26 +27,18 @@ function App() {
       {/* <p>{loggedInUser.email}</p> */}
       <Router>
       <div>
-      <nav className="navbar navbar-light bg-light justify-content-left nav">
-                <Link to="/" className="navbar-brand">HAPPY TRAVELLER</Link>
-                <Link to="/">Home</Link>
-                <Link to="/book/:id">Book</Link>
-                <Link to="/login">Login</Link>
-                <Link to="/contact"> Contact </Link>
-                <p>{loggedInUser.email}</p>
-            </nav>
-        
-     {/* <Link to="/">Home</Link>
-            
-          
-         
-          
-            <Link to="/book/:id">Book</Link>
-           
-           
-            <Link to="/login">Login</Link> */}
-            
-            
+     
+     <nav className="nav" className="navbar navbar-light bg-light justify-content-left nav ">
+               
+               <Link to="/" className="navbar-brand"><b>HAPPY TRAVELLER</b></Link>
+               <Link style={{color:"black"}} to="/">Home</Link>
+               <Link style={{color:"black"}} to="/book/:id">Book</Link>
+               <Link style={{color:"black"}} to="/login">Login</Link>
+               <Link style={{color:"black"}}to="/contact"> Contact </Link>
+               <Link>{loggedInUser.displayName}</Link>
+               
+           </nav>
+  
         
      
       
@@ -58,18 +50,14 @@ function App() {
         <Switch>
           <Route exact path="/">
            <Home></Home></Route>
-          {/* <Route path="/login">
-            <Login></Login>
-          </Route> */}
+          
           
             
          
           <PrivateRoute path="/book/:id">
            <Book></Book>
           </PrivateRoute>
-          <PrivateRoute path="/bookingPage">
-           <BookingPage></BookingPage>
-          </PrivateRoute>
+          
           <Route path ="/home">
             <Home></Home>
           </Route>

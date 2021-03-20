@@ -131,6 +131,8 @@ displayName:name,
         <from>
              <h1><b>Login</b></h1>
      
+     <div className="border-0   ">
+     <div  className =" m-5 pb-5 ">
      <form onSubmit = {handleSubmit}>
      <div className="form-group">
      {newUser && <input className="form-control"  name ="name" type="text" onBlur ={handleBlur} placeholder ="your Name"  required/>}
@@ -153,15 +155,17 @@ displayName:name,
     <input className="form-control" className="btn btn-success btn-lg " onClick ={handleSubmit} type="submit" value={newUser ? 'sign up' : 'sign in'}/>
     </div>
      </form>
+     
+     
      <p style ={{color : "red"}}>{user.error}</p>
      {user.success && <p style ={{color : "green"}}>user {newUser ? 'created': 'logged in'} successfully</p>}
 
 
-         
+         <p>Or</p>
         <div>
         <button  className="btn btn-dark btn-lg"  onClick ={handleGoogleSignIn}>Google sign in</button>
        
-        </div> </from>
+        </div> </div></div></from>
     );
 };
 

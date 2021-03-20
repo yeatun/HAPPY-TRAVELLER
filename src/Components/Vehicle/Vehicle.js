@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
+
 const Vehicles = (props) => {
  
   
@@ -8,13 +10,17 @@ const Vehicles = (props) => {
 
    
     return (
-        <di className="col-sm-3 text-center border ">
-            <Link  to ={`/book/${id}`}>
-            <img style={{weight:"50px",height:"100px"}} src={image} alt=""/>
+        <div  className="col-sm-3 " >
+            
+          <div  className ="border m-2">
+          <Link style={{color:'black'}}  to ={`/book/${id}`}>
+          <img  style={{height:"200px"}} src={image} alt=""/>
             <h1>{name}</h1>
-            </Link>
+         </Link>
+          </div>
+           
         
-        </di>
+        </div>
     );
 };
 
