@@ -39,9 +39,6 @@ const Book = () => {
                 </div>
             </form>
             
-        
-              
-                 
                 <div>
             </div>
                 <div className="col-sm-6 bg-light">
@@ -49,8 +46,12 @@ const Book = () => {
 
             </div>
                 </div>
-           <div className ="border col-sm-3 m-5" >
-           { click &&   ( <div>
+           <div className ="border col-sm-3 ml-5 mb-5" >
+             
+           { click &&   (
+             
+             <div>
+                 
                 <div className ="col-sm-3" > 
                 <div className ="border-0" >
                   <div style={{display:'flex'}}>

@@ -39,21 +39,13 @@ function App() {
                
            </nav>
   
-        
-     
-      
-
-        
         <hr />
        
         
         <Switch>
           <Route exact path="/">
            <Home></Home></Route>
-          
-          
-            
-         
+       
           <PrivateRoute path="/book/:id">
            <Book></Book>
           </PrivateRoute>
